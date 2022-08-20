@@ -42,4 +42,8 @@ python3 setup.py bdist_wheel
 sudo pip3 install dist/*.whl  # Should be done very swiftly
 ```
 
+Source:
+https://medium.com/@live459745355/how-do-i-successfully-install-pytorch-numpy-pandas-and-scipy-on-raspberry-pi-4-3b9b0fd739a2
+
+
 
