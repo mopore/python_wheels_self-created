@@ -1,0 +1,53 @@
+# System-wide Dependencies
+
+```
+sudo apt-get install python-dev libatlas-base-dev
+sudo apt-get install libblas-dev liblapack-dev
+sudo apt-get install -y fortran-compiler
+```
+..
+
+# Ensure 5+ GB of RAM
+
+On a Zero 2 a swap file is necessary
+```
+sudo dd if=/dev/zero of=/swap1 bs=1M count=5120
+sudo mkswap /swap1
+# This will take several minutes!
+```
+After that, add the following code into the end of /etc/fstab.
+```
+/swap1 swap swap
+```
+
+
+# Get Source, Compile and Install
+
+```
+# Get the sources (can be a few gigs)
+git clone --recursive https://github.com/scipy/scipy.git  # Takes forever...
+cd scipy
+git checkout tags/v1.9.0
+git submodule sync
+git submodule update --init --recursive
+
+# Build preperations
+sudo apt update
+sudo apt install cython make -y
+sudo pip3 install cython
+sudo pip3 install pybind11
+sudo pip3 install pythran
+sudo pip3 install wheel  # If not yet installed or an immediate problem occurs when trying to install
+
+
+
+# Build NumPy - Took a few hours
+python3 setup.py bdist_wheel
+
+# Install 'wheel' on system level
+sudo pip3 install dist/*.whl  # Should be done very swiftly
+```
+
+
+Source:
+https://medium.com/@live459745355/how-do-i-successfully-install-pytorch-numpy-pandas-and-scipy-on-raspberry-pi-4-3b9b0fd739a2
