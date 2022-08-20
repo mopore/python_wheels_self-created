@@ -8,3 +8,8 @@ pip3 install <name of the wheel>.whl
 ```
 
 Ensure to have the wheel package installed `pip3 install wheel`.
+
+Currently available:
+* NumPy - Armv7 (Raspian OS) - Python 3.10
+* SciPy - Armv7 (Raspian OS) - Python 3.10
+
