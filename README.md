@@ -1,4 +1,5 @@
-Python 3.10 is not yet supported on Raspbian OS in the official repos.
+Python 3.10 is not yet supported on Raspberry Pi OS (former Raspbian OS) in 
+the official repos.
 When upgraded manually by source the using some packages (e.g., NumPy and SciPy)
 are not yet available as binaries for ARM V7.
 
@@ -10,6 +11,6 @@ pip3 install <name of the wheel>.whl
 Ensure to have the wheel package installed `pip3 install wheel`.
 
 Currently available:
-* NumPy - Armv7 (Raspian OS) - Python 3.10
-* SciPy - Armv7 (Raspian OS) - Python 3.10
+* NumPy - Armv7 (Raspberry Pi OS) - Python 3.10
+* SciPy - Armv7 (Raspberry Pi OS) - Python 3.10
 
